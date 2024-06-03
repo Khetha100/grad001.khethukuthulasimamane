@@ -5,5 +5,9 @@ import com.enviro.assessment.grad001.khethukuthulasimamane.model.DisposalGuideli
 import java.util.List;
 
 public interface DisposalGuidelineService {
-    List<DisposalGuidelines> getAllDisposalGuidelines();
+    List<DisposalGuidelines> findAll();
+    DisposalGuidelines findById(Long id);
+    DisposalGuidelines save(DisposalGuidelines guideline);
+    void delete(Long id);
 }
+

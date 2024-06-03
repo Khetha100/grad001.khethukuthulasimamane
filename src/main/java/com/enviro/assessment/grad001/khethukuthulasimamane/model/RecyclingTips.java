@@ -18,7 +18,9 @@ public class RecyclingTips {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "waste_id")
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "waste_id", nullable = false)
     private WasteCategory waste;
 
     @Column(name = "recycling_tips")

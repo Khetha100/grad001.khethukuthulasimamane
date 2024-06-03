@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Data
 @Table(name = "disposal_guidelines")
@@ -18,7 +19,8 @@ public class DisposalGuidelines {
     private Long id;
 
     @NotNull
-    @Column(name = "waste_id")
+    @ManyToOne
+    @JoinColumn(name = "waste_id", nullable = false)
     private WasteCategory waste;
 
     @NotNull

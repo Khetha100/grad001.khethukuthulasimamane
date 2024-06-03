@@ -4,6 +4,7 @@ import com.enviro.assessment.grad001.khethukuthulasimamane.model.WasteCategory;
 import com.enviro.assessment.grad001.khethukuthulasimamane.service.WasteCategoryService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,30 +19,34 @@ public class WasteCategoryController {
     private WasteCategoryService wasteCategoryService;
 
     @GetMapping
-    public List<WasteCategory> getAllWasteCategories() {
-        return wasteCategoryService.getAllWasteCategories();
+    public ResponseEntity<List<WasteCategory>> getAllWasteCategories() {
+        List<WasteCategory> categories = wasteCategoryService.findAll();
+        return ResponseEntity.ok(categories);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<WasteCategory> getWasteCategoryById(@PathVariable Long id) {
-        WasteCategory wasteCategory = wasteCategoryService.getWasteCategoryById(id);
-        return wasteCategory != null ? ResponseEntity.ok(wasteCategory) : ResponseEntity.notFound().build();
+        WasteCategory category = wasteCategoryService.findById(id);
+        return ResponseEntity.ok(category);
     }
 
     @PostMapping
-    public WasteCategory createWasteCategory(@Valid @RequestBody WasteCategory wasteCategory) {
-        return wasteCategoryService.createWasteCategory(wasteCategory);
+    public ResponseEntity<WasteCategory> createWasteCategory(@Valid @RequestBody WasteCategory category) {
+        WasteCategory createdCategory = wasteCategoryService.save(category);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdCategory);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<WasteCategory> updateWasteCategory(@PathVariable Long id, @Valid @RequestBody WasteCategory wasteCategory) {
-        WasteCategory updatedWasteCategory = wasteCategoryService.updateWasteCategory(id, wasteCategory);
-        return updatedWasteCategory != null ? ResponseEntity.ok(updatedWasteCategory) : ResponseEntity.notFound().build();
+    public ResponseEntity<WasteCategory> updateWasteCategory(@PathVariable Long id, @Valid @RequestBody WasteCategory category) {
+        category.setId(id);
+        WasteCategory updatedCategory = wasteCategoryService.save(category);
+        return ResponseEntity.ok(updatedCategory);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteWasteCategory(@PathVariable Long id) {
-        wasteCategoryService.deleteWasteCategory(id);
+        wasteCategoryService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
+
