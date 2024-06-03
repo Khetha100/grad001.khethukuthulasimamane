@@ -7,6 +7,11 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import org.antlr.v4.runtime.misc.NotNull;
 
+/**
+ * This is a Waste Category model class
+ * It allows you to create Waste Category objects
+ * It consists of 6 attributes
+ **/
 @Entity
 @Data
 @Table(name = "waste_category")

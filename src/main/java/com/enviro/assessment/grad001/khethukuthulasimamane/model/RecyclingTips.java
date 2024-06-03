@@ -7,6 +7,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * This is a Recycling Tips model class
+ * It allows you to create Recycling Tips objects
+ * It consists of 4 attributes
+ **/
 @Entity
 @Data
 @Table(name = "recycle_tips")

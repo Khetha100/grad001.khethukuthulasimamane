@@ -9,6 +9,9 @@ import com.enviro.assessment.grad001.khethukuthulasimamane.ErrorHandler.Resource
 
 import java.util.List;
 
+/**
+ * Service implementation for managing RecyclingTips.
+ */
 @Service
 public class RecyclingTipsServiceImpl implements RecyclingTipsService {
 

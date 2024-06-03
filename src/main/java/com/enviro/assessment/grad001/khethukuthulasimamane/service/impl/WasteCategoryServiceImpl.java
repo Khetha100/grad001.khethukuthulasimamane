@@ -10,6 +10,9 @@ import com.enviro.assessment.grad001.khethukuthulasimamane.ErrorHandler.Resource
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service implementation for managing WasteCategory.
+ */
 @Service
 public class WasteCategoryServiceImpl implements WasteCategoryService {
 

@@ -7,6 +7,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+/**
+ * This is a Disposal Guidelines model class
+ * It allows you to create Disposal Guideline objects
+ * It consists of 4 attributes
+ **/
 @Entity
 @Data
 @Table(name = "disposal_guidelines")

@@ -26,7 +26,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Create Waste Categories
+        // Create the Waste Categories
         WasteCategory municipalSolidWaste = new WasteCategory(null, "Municipal Solid Waste", true, true, "General household waste", "Bin");
         WasteCategory industrialWaste = new WasteCategory(null, "Industrial Waste", false, true, "Waste from industrial activities", "Container");
         WasteCategory agriculturalWaste = new WasteCategory(null, "Agricultural Waste", true, true, "Waste from agricultural activities", "Bin");
@@ -34,7 +34,7 @@ public class DataInitializer implements CommandLineRunner {
 
         wasteCategoryRepository.saveAll(List.of(municipalSolidWaste, industrialWaste, agriculturalWaste, hazardousWaste));
 
-        // Create Disposal Guidelines
+        // Create the Disposal Guidelines
         DisposalGuidelines guideline1 = new DisposalGuidelines(null, municipalSolidWaste, "Place in the bin", "Household waste should be disposed of in the bin");
         DisposalGuidelines guideline2 = new DisposalGuidelines(null, industrialWaste, "Use special container", "Industrial waste should be placed in special containers");
         DisposalGuidelines guideline3 = new DisposalGuidelines(null, agriculturalWaste, "Place in the bin", "Agricultural waste should be placed in the bin");
@@ -42,7 +42,7 @@ public class DataInitializer implements CommandLineRunner {
 
         disposalGuidelinesRepository.saveAll(List.of(guideline1, guideline2, guideline3, guideline4));
 
-        // Create Recycling Tips
+        // Create the Recycling Tips
         RecyclingTips tip1 = new RecyclingTips(null, municipalSolidWaste, "Separate paper and plastic", "Recyclable materials should be separated from general waste");
         RecyclingTips tip2 = new RecyclingTips(null, industrialWaste, "Recycle metals and plastics", "Metals and plastics from industrial waste can be recycled");
         RecyclingTips tip3 = new RecyclingTips(null, agriculturalWaste, "Compost organic waste", "Organic agricultural waste can be composted");

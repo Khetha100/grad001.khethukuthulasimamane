@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service implementation for managing DisposalGuidelines.
+ */
 @Service
 public class DisposalGuidelinesServiceImpl implements DisposalGuidelineService {
 
