@@ -49,15 +49,11 @@ spring.h2.console.enabled=true
 server.port=8081
 ```
 
-To access the H2 console, navigate to http://localhost:8081/h2-console and use the following credentials:
+To access the H2 console, navigate to [http://localhost:8081/h2-console](http://localhost:8081/h2-console) and use the following credentials:
 
-yaml
-
-JDBC URL: jdbc:h2:mem:testdb
-
-Username: sa
-
-Password: password
+- **JDBC URL**: jdbc:h2:mem:testdb
+- **Username**: sa
+- **Password**: password
 
 # API Endpoints
 ## Waste Category
