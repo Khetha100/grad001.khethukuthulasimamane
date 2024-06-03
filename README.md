@@ -54,7 +54,9 @@ To access the H2 console, navigate to http://localhost:8081/h2-console and use t
 yaml
 
 JDBC URL: jdbc:h2:mem:testdb
+
 Username: sa
+
 Password: password
 
 # API Endpoints
